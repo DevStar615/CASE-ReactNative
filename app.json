@@ -1,0 +1,57 @@
+{
+  "marketingVersion": "1.0.1.14",
+  "expo": {
+    "name": "Case",
+    "description": "Case mobile service app",
+    "slug": "casesnow",
+    "privacy": "unlisted",
+    "sdkVersion": "30.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "bundleIdentifier": "com.casesnow.service",
+      "supportsTablet": true,
+      "buildNumber": "5",
+      "infoPlist": {
+        "NSCameraUsageDescription": "CaseSnow uses your camera to allow you to take photos of lots after you've plowed",
+        "NSPhotoLibraryUsageDescription": "CaseSnow uses your photo library to allow you to upload photos of lots after you've plowed",
+        "NSLocationWhenInUseUsageDescription": "CaseSnow needs access to your location so we can provide nearby locations to you for service"
+      }
+    },
+    "android": {
+      "package": "com.casesnow.service",
+      "versionCode": 5,
+      "config": {
+        "fabric": {
+          "apiKey": "78505f1867c51f7f70ef8abcdcdcaa25e97e9bb6",
+          "buildSecret": "228d28c7127cda98b8431a3779334e9c64909da56fa0a53a8e7c7d34aa0890b3"
+        }
+      }
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "casesnow",
+            "project": "casesnow",
+            "authToken": "5aad72a337e14381a03588b825ed943b34f6116a01fe47f89394986738834926"
+          }
+        }
+      ]
+    }
+  }
+}
